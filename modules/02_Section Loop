@@ -1,0 +1,27 @@
+**Goal:**  
+Iterate over each section and generate constrained, PS2-compliant section summaries and metadata.
+
+**Inputs:**
+
+- Normalized sections and text from Module 1.
+- Configuration (word limits, audience, purpose).
+- Guardrail rules (from Module 3).
+
+**Key Responsibilities:**
+
+- For each section in order:
+  - Extract the corresponding text.
+  - Generate a **≤ 50-word** summary that uses simple terminology and respects PS2 constraints.
+  - Identify key concepts, methods, or results when present.
+  - Mark any special conditions (e.g., missing, too short, truncated).
+- Collect glossary candidates (terms or phrases that may need explanation).
+
+**Outputs:**
+
+- A mapping: `SectionName → SectionSummaryData`, where each `SectionSummaryData` includes:
+  - Section name.
+  - ≤ 50-word summary text.
+  - Key concepts / methods.
+  - Local warnings (missing, too short, partial).
+- A list of potential glossary terms.
+

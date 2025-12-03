@@ -1,0 +1,31 @@
+**Goal:**  
+Process and validate user inputs, normalize sections, and construct a clean internal representation of the paper and configuration.
+
+**Inputs:**
+
+- Paper Name.
+- Raw paper text or section-level chunks.
+- Section list requested by the user.
+- Summary purpose for general audience.
+- Desired short length (which must not violate PS2 word limits).
+- Audience type (expert, lay, or both).
+
+**Key Responsibilities:**
+
+- Normalize section names (e.g., “Intro” → “Introduction”, “Conclusions” → “Conclusion”).
+- Detect **missing sections**: requested by the user but absent from the text.
+- Detect **short sections**: sections that may be extremely brief (e.g., less than some threshold such as 50 words).
+- Validate that requested lengths are compatible with:
+  - Per-section maximum = 50 words.
+  - Unified summary maximum = 500 words.
+- Build an internal structure (e.g., ordered list) that preserves **original section order**.
+
+**Outputs:**
+
+- A normalized, ordered list of sections with status tags (e.g., `present`, `missing`, `too_short`).
+- A configuration object containing:
+  - Word limit parameters (section and total).
+  - Audience and purpose.
+  - Flags for chunking/long-paper mode.
+- Cleaned text for each section (or placeholder markers for missing sections).
+

@@ -1,0 +1,37 @@
+**Goal:**  
+Assemble all intermediates into the final user-visible output, respecting all PS2 constraints and format requirements.
+
+**Inputs:**
+
+- Section summaries and metadata from Module 2.
+- Global warnings and annotations from Module 3.
+- Configuration from Module 1 (audience, purpose, word limits).
+- Key contributions and citations from additional modules (see below).
+
+**Key Responsibilities:**
+
+- Construct the **Paper Summary (Unified Summary)**:
+  - Ensure the total word count does not exceed **500 words**.
+  - Preserve the logical flow aligned with the original section order.
+- Build the **Section-by-Section Table**:
+  - Maintain section order.
+  - Ensure each section summary remains **≤ 50 words**.
+- Generate both:
+  - **Expert Summary**: slightly more technical (while still clear).
+  - **Lay Summary**: simple, straightforward terminology for general audience.
+- Create the **Mini-Glossary**:
+  - Convert glossary candidates into a list of key terms with one-sentence explanations.
+- Create **Checks & Warnings**:
+  - Consolidate all warnings and guardrail messages into a clearly formatted section.
+- Ensure all outputs are in clean, consistent Markdown format.
+
+**Outputs:**
+
+- Final response as seen by the user, with all required sections:
+  - Paper Summary.
+  - Section-by-Section Table.
+  - Expert Summary.
+  - Lay Summary.
+  - Mini-Glossary.
+  - Checks & Warnings.
+

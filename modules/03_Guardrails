@@ -1,0 +1,32 @@
+**Goal:**  
+Apply and record safety and quality constraints: missing/empty sections, short sections, hallucination mitigation, and long-paper chunking behavior.
+
+**Inputs:**
+
+- Section list and statuses from Module 1.
+- Section summaries and metadata from Module 2.
+- Raw text signals (e.g., chunk boundaries for long papers).
+
+**Key Responsibilities:**
+
+- **Missing / empty sections:**
+  - Confirm and record which requested sections have no usable content.
+  - Ensure output clearly indicates “Section missing” rather than guessing.
+- **< 50-word sections:**
+  - Detect sections with extremely brief source text, and annotate them with caution (e.g., “Source text very short, summary may be limited.”).
+- **Hallucination mitigation:**
+  - Enforce rules:
+    - Summaries must only describe information grounded in the provided text.
+    - For unclear points, instruct to say “Not specified in the provided text.”
+  - Provide patterns of cautious phrasing.
+- **Long-paper chunking:**
+  - Outline and apply strategies for handling chunked input:
+    - Per-chunk processing.
+    - Aggregation of chunk-level summaries into a coherent final summary while respecting the 50-word and 500-word limits.
+  - Track which sections may span multiple chunks.
+
+**Outputs:**
+
+- A structured list of **global warnings** (e.g., missing sections, truncated text).
+- Guardrail annotations attached to each section summary.
+- Guidance for how **Checks & Warnings** should be expressed in the final 

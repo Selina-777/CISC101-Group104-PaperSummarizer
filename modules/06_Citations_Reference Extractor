@@ -1,0 +1,22 @@
+**Goal:**  
+Help users see which references are central to the paper without fabricating any citations.
+
+**Inputs:**
+
+- Full or partial paper text, especially Related Work and References sections.
+
+**Key Responsibilities:**
+
+- Identify in-text citations and the most frequently mentioned works.
+- Extract citation details **only** from the text (author names, year, partial titles if visible).
+- Avoid inventing or completing missing citation details.
+- Flag references that appear truncated or incomplete.
+
+**Outputs:**
+
+- A brief “Key References” list that:
+  - Shows partial citations as they appear in the text.
+  - Notes any truncation or missing information.
+- Optional integration with:
+  - Mini-Glossary (e.g., glossary terms linked to key references).
+  - Checks & Warnings (e.g., “References section incomplete in provided text.”).

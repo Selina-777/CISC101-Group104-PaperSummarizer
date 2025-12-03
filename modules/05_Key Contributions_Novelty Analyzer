@@ -1,0 +1,24 @@
+**Goal:**  
+Identify the main contributions and novelty of the paper, and feed them into the summaries.
+
+**Inputs:**
+
+- Section summaries (especially Abstract, Introduction, Results, Discussion).
+- Any relevant guardrail annotations (e.g., incomplete sections).
+
+**Key Responsibilities:**
+
+- Extract:
+  - Main problem or research question
+  - Proposed method/model/approach
+  - Major experimental or theoretical results
+- Detect what appears **novel** compared to typical prior work (using careful, non-speculative phrasing)
+- Provide a list of 3–7 key contributions
+
+**Outputs:**
+
+- A structured list of key contributions (with optional confidence notes)
+- Signals/annotations that the Rendering module can use to emphasize these contributions in:
+  - Paper Summary
+  - Expert Summary
+  - Lay Summary

@@ -6,11 +6,14 @@ Apply and record safety and quality constraints: missing/empty sections, short s
 - Section list and statuses from Module 1.
 - Section summaries and metadata from Module 2.
 - Raw text signals (e.g., chunk boundaries for long papers).
+- Evidence mode (Strict, Not-Strict)
 
 **Key Responsibilities:**
 
 - **Missing / empty sections:**
   - Confirm and record which requested sections have no usable content.
+    -If section is missing or word count = 0 instruct to say "Section Missing: No usable text was provided"
+    -If ( 1 < section word count < 50 ) Then instruct to say "Section Very Short: Summary may be incomplete"
   - Ensure output clearly indicates “Section missing” rather than guessing.
 - **< 50-word sections:**
   - Detect sections with extremely brief source text, and annotate them with caution (e.g., “Source text very short, summary may be limited.”).
@@ -24,9 +27,14 @@ Apply and record safety and quality constraints: missing/empty sections, short s
     - Per-chunk processing.
     - Aggregation of chunk-level summaries into a coherent final summary while respecting the 50-word and 500-word limits.
   - Track which sections may span multiple chunks.
+- **Evidence Auditing**
+  -if 
+      -Evidence mode = "Not-Strict" then perform actions as stated
+      -Evidence mode = "Strict" then only include claims, equations, and results that appear in the provided text. 
+          -If cannot find enough information in text, Instruct to say "The source text does not provide enough detail to summarize this section in strict evidence mode"
 
 **Outputs:**
 
-- A structured list of **global warnings** (e.g., missing sections, truncated text).
+- A structured list of **global warnings** (e.g., missing sections, incomplete sections, truncated text).
 - Guardrail annotations attached to each section summary.
 - Guidance for how **Checks & Warnings** should be expressed in the final 

@@ -4,6 +4,7 @@ Iterate over each section and generate constrained, PS2-compliant section summar
 **Inputs:**
 
 - Normalized sections and text from Module 1.
+- Summary Level (detailed, short)
 - Configuration (word limits, audience, purpose).
 - Guardrail rules (from Module 3).
 
@@ -11,7 +12,9 @@ Iterate over each section and generate constrained, PS2-compliant section summar
 
 - For each section in order:
   - Extract the corresponding text.
-  - Generate a **≤ 50-word** summary that uses simple terminology and respects PS2 constraints.
+  - If: 
+    Summary level = "short" then Generate a **≤ 50-word** summary that uses simple terminology and respects PS2 constraints.
+    Summary level = "detailed" then Generate a **≤ 50-word** summary that uses simple terminology and respects PS2 constraints, and also present key concepts in a 2-5 point bullet list. 
   - Identify key concepts, methods, or results when present.
   - Mark any special conditions (e.g., missing, too short, truncated).
 - Collect glossary candidates (terms or phrases that may need explanation).
@@ -20,7 +23,9 @@ Iterate over each section and generate constrained, PS2-compliant section summar
 
 - A mapping: `SectionName → SectionSummaryData`, where each `SectionSummaryData` includes:
   - Section name.
-  - ≤ 50-word summary text.
+  - If: 
+    Summary level = "short" present a **≤ 50-word** summary text
+    Summary level = "detailed" present a **≤ 50-word** summary text and a 3-5 point bullet list of key points
   - Key concepts / methods.
   - Local warnings (missing, too short, partial).
 - A list of potential glossary terms.
